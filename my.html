@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Height Converter</title>
+  </head>
+  <body>
+    <h1>Height Converter</h1>
+    <p>Enter your height in feet and inches:</p>
+    <label>Feet:</label>
+    <input type="number" id="feetInput"><br>
+    <label>Inches:</label>
+    <input type="number" id="inchesInput"><br>
+    <button onclick="convertHeight()">Convert</button>
+    <p id="result"></p>
+    
+    <script>
+      function convertHeight() {
+        // Get the user's input
+        const feet = parseFloat(document.getElementById("feetInput").value);
+        const inches = parseFloat(document.getElementById("inchesInput").value);
+        
+        // Convert feet and inches to meters
+        const totalInches = (feet * 12) + inches;
+        const meters = totalInches * 0.0254;
+        
+        // Display the result on the page
+        document.getElementById("result").textContent = `Your height is ${meters.toFixed(2)} meters.`;
+      }
+    </script>
+  </body>
+</html>
